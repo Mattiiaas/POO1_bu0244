@@ -34,4 +34,14 @@ public class Usuario {
         return nombre;
     }
 
+    @Override
+    public String toString() {
+        return "Usuario{" +
+                "nombre='" + nombre + '\'' +
+                ", fechaNacimiento='" + fechaNacimiento + '\'' +
+                ", genero=" + genero +
+                ", correo='" + correo + '\'' +
+                ", contra='" + contra + '\'' +
+                '}';
+    }
 }
