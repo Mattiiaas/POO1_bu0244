@@ -26,11 +26,24 @@ public class RectanguloTest {
     void testRectanguloEsCuadrado(){
         Assertions.assertFalse(rectangulo.esCuadrado());
     }
+    void testRectanguloEscala(){
+        rectangulo.escala(2.3);
+        Assertions.assertEquals(8.05,rectangulo.getAnchura(),10e-5);
+        Assertions.assertEquals(10.58,rectangulo.getAltura(),10e-5);
+
+    }
     void testRectanguloMismaArea(){
         Assertions.assertFalse(rectangulo.mismaArea(rectanguloAuxiliar));
     }
     void testRectanguloDiagonal() {
         Assertions.assertEquals(5.7801, rectangulo.calcularDiagonal(), 10e-5);
+    }
+    void testRectanguloRotar(){
+        double alturaAuxiliar=rectangulo.getAltura();
+        double anchuraAuxiliar=rectangulo.getAnchura();
+        rectangulo.rotar();
+        Assertions.assertEquals(alturaAuxiliar,rectangulo.getAnchura(),10e-5);
+        Assertions.assertEquals(anchuraAuxiliar,rectangulo.getAltura(),10e-5);
     }
 
 }
